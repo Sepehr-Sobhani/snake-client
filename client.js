@@ -2,12 +2,19 @@ const net = require("net");
 
 const connect = () => {
   const conn = net.createConnection({
-    host: "135.23.222.131",
-    port: 50542,
+    host: "localhost",
+    port: 50541,
   });
   conn.setEncoding("utf-8");
-  conn.on("data", () => {
-    console.log("you ded cuz you idled");
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: Sep");
+  });
+  //   conn.on("connect", () => {
+  //   });
+
+  conn.on("data", (data) => {
+    console.log(data);
   });
   return conn;
 };
