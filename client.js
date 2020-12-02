@@ -10,9 +10,6 @@ const connect = () => {
     console.log("Successfully connected to game server");
     conn.write("Name: Sep");
   });
-  //     conn.on("connect", () => {
-  // });
-
   // this one is for being idle
   conn.on("data", (data) => {
     console.log(data);
