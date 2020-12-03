@@ -27,6 +27,15 @@ const handleUserInput = stdin.on("data", (data) => {
   if (data === "d") {
     connection.write("Move: right");
   }
+  if (data === "h") {
+    connection.write("Say: Hello");
+  }
+  if (data === "e") {
+    connection.write("Say: gonna eat u now");
+  }
+  if (data === "r") {
+    connection.write("Say: run as fast as u can");
+  }
 });
 
 module.exports = { setupInput };
